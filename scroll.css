@@ -1,0 +1,268 @@
+:root::-webkit-scrollbar {
+    display: none;
+}
+
+:root {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    --primaryColor: #1dbfff;
+    --secColor: #15273d;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    transition-duration: 0.3s;
+}
+
+.fixedHeader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: minmax(80px, auto);
+}
+
+.headerLinks {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style-type: none;
+    text-decoration-line: none;
+    font-size: 1.2rem;
+    text-transform: capitalize;
+}
+
+.link {
+    text-decoration-line: none;
+    color: white;
+}
+
+.link:hover {
+    cursor: pointer;
+    color: var(--secColor);
+}
+
+li {
+    margin: auto 30px auto 30px;
+}
+
+.logo {
+    margin: 15px 0 0 50px;
+}
+
+.iconContainer {
+    display: none;
+    font-size: 1.5rem;
+    color: var(--secColor);
+}
+
+.banner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+main::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(40, 114, 143, 0.3);
+}
+
+main {
+    height: calc(100vh - 180px);
+    text-align: center;
+}
+
+.heading {
+    margin-top: 180px;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    font-size: 2.5rem;
+}
+
+.subHeading {
+    margin-top: 10px;
+    color: white;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+}
+
+.intro {
+    color: white;
+    max-width: 700px;
+    margin: 30px auto;
+}
+
+.featuredBtn {
+    margin-top: 50px;
+    font-size: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 15px;
+    background: none;
+    color: white;
+    border: 3px solid white;
+    outline: 1px solid white;
+    outline-offset: -6px;
+}
+
+.featuredBtn:hover {
+    cursor: pointer;
+    background: white;
+    color: var(--primaryColor);
+    transform: scale(1.05);
+}
+
+#about,
+#services,
+#featuredTours,
+#tours {
+    height: 100vh;
+    text-align: center;
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    letter-spacing: 3px;
+    color: var(--secColor);
+}
+
+span {
+    color: var(--primaryColor);
+}
+
+footer {
+    height: 150px;
+    background-color: var(--secColor);
+}
+
+.footerText {
+    padding: 50px;
+    text-align: center;
+    color: white;
+    text-transform: capitalize;
+    letter-spacing: 3px;
+    font-size: 0.7rem;
+}
+
+.date {
+    color: white;
+}
+
+.arrowUpContainer {
+    position: fixed;
+    left: calc(98% - 32px);
+    bottom: 2%;
+    display: none;
+}
+
+.fa-arrow-alt-circle-up {
+    color: var(--primaryColor);
+    font-size: 2rem;
+}
+
+.arrowUpContainer:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+}
+
+
+@media screen and (max-width: 690px) {
+
+    .header {
+        grid-auto-rows: minmax(60px, auto);
+    }
+
+    .logo {
+        margin: 5px 0 0 50px;
+    }
+
+    .headerLinks {
+        display: none;
+    }
+
+    .iconContainer {
+        display: block;
+        margin: 15px 20px 15px auto;
+    }
+
+    .fa-bars:hover {
+        cursor: pointer;
+        transform: scale(1.2);
+    }
+
+    .heading {
+        margin-top: 130px;
+        font-size: 2rem;
+    }
+
+    .subHeading {
+        font-size: 0.9rem;
+    }
+
+    .intro {
+        font-size: 0.7rem;
+    }
+
+    main {
+        height: calc(100vh - 130px);
+    }
+
+    #about,
+    #services,
+    #featuredTours,
+    #tours {
+        font-size: 0.9rem;
+    }
+
+    .footerText {
+        font-size: 0.5rem;
+    }
+}
+
+/* added in js */
+.showLinks {
+    display: grid;
+    grid-auto-rows: minmax(80px, 1fr);
+}
+
+.darken {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.rotate {
+    transform: rotateZ(90deg);
+}
+
+.changeNav {
+    background-color: white;
+    box-shadow: 0px 0px 52px 0px rgba(0, 0, 0, 0.3);
+}
+
+.changeLink {
+    color: var(--secColor);
+}
+
+.changeLink:hover {
+    color: var(--primaryColor);
+}
+
+.showArrow {
+    display: block;
+}
